@@ -23,16 +23,26 @@ html {
 
 body {
     background-color: var(--bg-color);
-    background-image: url("raw/Background .webp");
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     color: var(--text-main);
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+.bg-texture {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%; /* For Safari iOS 100% fixed or 100vh */
+    height: 100dvh; /* Modern mobile height */
+    background-image: url("raw/Background .webp");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -5;
+    pointer-events: none;
 }
 
 .wrapper {
@@ -71,10 +81,11 @@ h3 {
 
 .section-title {
     font-family: var(--font-cursive);
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     text-align: center;
     color: var(--text-accent);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
 .section-subtitle {
@@ -122,6 +133,20 @@ h3 {
     display: flex;
     justify-content: center;
     width: 100%;
+    position: relative;
+}
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(235, 224, 94, 0.15) 0%, transparent 60%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: blur(40px);
 }
 
 .hero-image img {
@@ -168,15 +193,16 @@ h3 {
     border: 3px solid var(--btn-border);
     border-radius: 50px;
     font-size: 1.3rem;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px var(--btn-border);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(235, 224, 94, 0.5);
 }
 
 .primary-btn {
@@ -296,17 +322,20 @@ h3 {
 }
 
 .audience-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 12px;
-    backdrop-filter: blur(5px);
-    transition: transform 0.3s, background 0.3s;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+    padding: 35px;
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
 }
 
 .audience-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
 }
 
 .audience-card h3 {
@@ -335,9 +364,16 @@ h3 {
 }
 
 .price-step {
-    padding: 25px;
-    border-left: 3px solid var(--btn-border);
+    padding: 30px 25px;
+    border-left: 4px solid var(--btn-border);
     background: linear-gradient(90deg, rgba(235, 224, 94, 0.05) 0%, transparent 100%);
+    border-radius: 0 12px 12px 0;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.price-step:hover {
+    background: linear-gradient(90deg, rgba(235, 224, 94, 0.12) 0%, transparent 100%);
+    transform: translateX(8px);
 }
 
 .price-step h3 {

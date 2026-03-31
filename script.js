@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add initial state classes
     elementsToAnimate.forEach((el, index) => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = `opacity 0.6s ease-out, transform 0.6s ease-out`;
+        el.style.transform = 'translateY(40px)';
+        el.style.transition = `opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1)`;
         
         // Add a slight delay based on index for gallery images to stagger them
         if (el.tagName.toLowerCase() === 'img') {
