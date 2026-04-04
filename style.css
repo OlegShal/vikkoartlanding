@@ -27,6 +27,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
 html {
@@ -65,7 +67,6 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100%;
     height: 100dvh;
     background-image: url("raw/Background .webp");
     background-size: cover;
@@ -73,6 +74,9 @@ body {
     background-repeat: no-repeat;
     z-index: -5;
     pointer-events: none;
+    /* Push to its own GPU compositor layer so it never triggers a repaint on scroll */
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 /* ============================================================
@@ -458,35 +462,21 @@ h3 {
 .img-wrap img {
     border-radius: 0;
     box-shadow: none;
+    display: block;
+    width: 100%;
+    transition: filter 0.3s ease, box-shadow 0.3s ease;
 }
 
-.img-wrap::after {
-    content: '🔍';
-    position: absolute;
-    inset: 0;
-    background: rgba(13, 26, 51, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    opacity: 0;
-    transition: opacity var(--transition-base);
-    display: grid;
-    place-items: center;
+/* Desktop-only subtle hover — no zoom, no overlay, no cursor change */
+@media (hover: hover) {
+    .img-wrap:hover img {
+        filter: brightness(1.08);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+    }
 }
 
-.img-wrap:hover::after {
-    opacity: 1;
-}
-
-.img-wrap:hover img {
-    transform: scale(1.06);
-}
-
-.image-gallery img:hover {
-    transform: scale(1.04);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
-    z-index: 2;
+.image-gallery img {
+    transition: filter 0.3s ease, box-shadow 0.3s ease;
 }
 
 .two-cols-small {
@@ -763,35 +753,43 @@ h3 {
 /* ============================================================
    Scroll Reveal Animations
    ============================================================ */
-.reveal {
-    opacity: 0;
-    transform: translateY(36px);
-    transition: opacity 0.75s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.75s cubic-bezier(0.175, 0.885, 0.32, 1);
+
+/* Elements are visible by default — JS will hide and animate them */
+.reveal,
+.reveal-left,
+.reveal-right {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1);
 }
 
-.reveal.visible {
+/* JS adds .js-ready to <body> before running observers */
+.js-ready .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.js-ready .reveal.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.reveal-left {
+.js-ready .reveal-left {
     opacity: 0;
-    transform: translateX(-32px);
-    transition: opacity 0.75s ease, transform 0.75s ease;
+    transform: translateX(-28px);
 }
 
-.reveal-left.visible {
+.js-ready .reveal-left.visible {
     opacity: 1;
     transform: translateX(0);
 }
 
-.reveal-right {
+.js-ready .reveal-right {
     opacity: 0;
-    transform: translateX(32px);
-    transition: opacity 0.75s ease, transform 0.75s ease;
+    transform: translateX(28px);
 }
 
-.reveal-right.visible {
+.js-ready .reveal-right.visible {
     opacity: 1;
     transform: translateX(0);
 }
@@ -904,6 +902,15 @@ h3 {
 
     .audience-card {
         padding: 28px 24px;
+    }
+
+    /* backdrop-filter (blur) is very GPU-expensive on mobile — disable it */
+    .floating-nav,
+    .audience-card,
+    .price-step,
+    .lightbox-overlay {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
     }
 }
 

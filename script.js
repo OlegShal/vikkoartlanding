@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ----------------------------------------------------------------
+       Mark body as JS-ready so CSS reveal animations activate.
+       Without this flag, all .reveal elements are visible by default
+       — no flash of invisible content on slow connections.
+    ---------------------------------------------------------------- */
+    document.body.classList.add('js-ready');
+
+    /* ----------------------------------------------------------------
        Scroll Progress Bar
     ---------------------------------------------------------------- */
     const scrollProgress = document.getElementById('scrollProgress');
@@ -20,11 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header-logo');
 
     if (floatingNav && header) {
-        // Use IntersectionObserver instead of scroll event + getBoundingClientRect
-        // to avoid Forced Synchronous Layout which hurts mobile performance
         const headerObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                // If header is completely out of view (above the viewport), show nav
                 if (!entry.isIntersecting && entry.boundingClientRect.bottom < 0) {
                     floatingNav.classList.add('visible');
                 } else {
@@ -32,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, { threshold: 0 });
-        
+
         headerObserver.observe(header);
     }
 
@@ -64,15 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 revealObserver.unobserve(entry.target);
             }
         });
-    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.12 });
+    }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
 
-    // Stagger delay for cards/images in the same parent
-    const revealGroups = document.querySelectorAll(
-        '.audience-grid, .pricing-steps, .image-gallery, .path-items'
-    );
-    revealGroups.forEach(group => {
-        const children = group.querySelectorAll('.reveal, .reveal-left, .reveal-right, .img-wrap img');
-        children.forEach((child, i) => {
+    // Stagger delay for cards in the same grid
+    document.querySelectorAll('.audience-grid, .pricing-steps, .path-items').forEach(group => {
+        group.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((child, i) => {
             child.style.transitionDelay = `${i * 0.07}s`;
         });
     });
@@ -82,42 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
-    // Observe gallery images
+    // Stagger + observe gallery images
     document.querySelectorAll('.image-gallery img').forEach((img, i) => {
         img.classList.add('reveal');
-        img.style.transitionDelay = `${(i % 4) * 0.1}s`;
+        img.style.transitionDelay = `${(i % 4) * 0.08}s`;
         revealObserver.observe(img);
     });
-
-    /* ----------------------------------------------------------------
-       Lightbox
-    ---------------------------------------------------------------- */
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxClose = document.getElementById('lightboxClose');
-
-    if (lightbox && lightboxImg) {
-        // Open when clicking any gallery image
-        document.querySelectorAll('.img-wrap img, .image-gallery img').forEach(img => {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightboxImg.alt = img.alt;
-                lightbox.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        const closeLightbox = () => {
-            lightbox.classList.remove('open');
-            document.body.style.overflow = '';
-            setTimeout(() => { lightboxImg.src = ''; }, 350);
-        };
-
-        // Close via button, backdrop click, or Escape key
-        if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-    }
 
 });
