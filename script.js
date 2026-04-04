@@ -68,7 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 revealObserver.unobserve(entry.target);
             }
         });
-    }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
+    // rootMargin: positive bottom value = start revealing 200px BEFORE entering viewport
+    }, { rootMargin: '0px 0px 200px 0px', threshold: 0 });
 
     // Stagger delay for cards in the same grid
     document.querySelectorAll('.audience-grid, .pricing-steps, .path-items').forEach(group => {
@@ -77,16 +78,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Observe all reveal elements
+    // Observe text/card reveal elements only
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
         revealObserver.observe(el);
     });
 
-    // Stagger + observe gallery images
-    document.querySelectorAll('.image-gallery img').forEach((img, i) => {
-        img.classList.add('reveal');
-        img.style.transitionDelay = `${(i % 4) * 0.08}s`;
-        revealObserver.observe(img);
-    });
+    // Images: NO reveal animation — just display immediately
 
 });
