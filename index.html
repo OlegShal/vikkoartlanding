@@ -123,6 +123,11 @@
           "logo": "https://lessons.vikkoart.me/raw/Vikkoart.webp",
           "image": "https://lessons.vikkoart.me/raw/i.webp",
           "telephone": "",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "50.5480",
+            "longitude": "30.2120"
+          },
           "areaServed": [
             { "@type": "City", "name": "Буча" },
             { "@type": "City", "name": "Ірпінь" }
@@ -177,6 +182,35 @@
             "priceCurrency": "UAH",
             "availability": "https://schema.org/InStock"
           }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Чи потрібно купувати матеріали для першого заняття?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ні, на перше заняття (адаптацію) я надаю всі необхідні базові матеріали. Далі ми визначимо ваш улюблений напрямок і я допоможу зібрати персональний набір."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Чи підходять заняття для дорослих без жодного досвіду?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Абсолютно! Більшість моїх дорослих учнів починають з нуля. Ми працюватимемо у вашому темпі — без стресу та нудних лекцій."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Де проходять заняття?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Заняття проходять у вас вдома (Буча, Ірпінь та найближчі райони). Це дозволяє вам навчатися в максимально комфортній атмосфері."
+              }
+            }
+          ]
         }
       ]
     }
@@ -204,6 +238,7 @@
         <a href="#path">Мій шлях</a>
         <a href="#audience">Для кого</a>
         <a href="#pricing">Вартість</a>
+        <a href="#faq">Питання</a>
         <a href="#contact">Контакт</a>
     </nav>
 
@@ -212,7 +247,7 @@
     <!-- Header Logo -->
     <header class="header-logo text-center">
         <!-- h1 is visually inside the logo image; we keep it accessible for crawlers -->
-        <h1 class="sr-only">Vikko.Art — Художні курси та майстер-класи у Бучі та Ірпіні</h1>
+        <h1 class="sr-only">Уроки малювання в Бучі та Ірпені — Vikko.Art</h1>
         <img src="raw/Vikkoart.webp" alt="Vikko.Art — логотип художніх курсів Вікторії, Буча/Ірпінь" class="logo-img"
             fetchpriority="high" width="1000" height="auto">
     </header>
@@ -266,10 +301,10 @@
                     </div>
                     <div class="image-gallery two-cols-small">
                         <div class="img-wrap"><img src="raw/arch1.webp"
-                                alt="Архітектурний скетч Вікторії — академічна база" loading="lazy" width="250"
+                                alt="Архітектурний скетч — уроки малювання для дорослих у Бучі" loading="lazy" width="250"
                                 height="200"></div>
                         <div class="img-wrap"><img src="raw/arch2.webp"
-                                alt="Архітектурний малюнок — художня та архітектурна освіта" loading="lazy" width="250"
+                                alt="Академічний малюнок — курси живопису Ірпінь" loading="lazy" width="250"
                                 height="200"></div>
                     </div>
 
@@ -281,7 +316,7 @@
                                 loading="lazy" width="200" height="200"></div>
                         <div class="img-wrap"><img src="raw/sketch3.webp" alt="Міський скетч — урок малювання Буча"
                                 loading="lazy" width="200" height="200"></div>
-                        <div class="img-wrap"><img src="raw/sketch4.webp" alt="Пейзажний скетч — курси малювання Ірпінь"
+                        <div class="img-wrap"><img src="raw/sketch4.webp" alt="Пейзажний скетч — індивідуальні курси малювання Ірпінь"
                                 loading="lazy" width="200" height="200"></div>
                     </div>
                 </div>
@@ -432,6 +467,32 @@
                         родини.
                     </li>
                 </ul>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section wrapper">
+            <h2 class="section-title reveal">Часті питання</h2>
+            <div class="faq-accordion reveal">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Чи потрібно купувати матеріали для першого заняття?</button>
+                    <div class="faq-answer">
+                        <p>Ні, на перше заняття я можу взяти необхідні базові матеріали. Далі, коли ми визначимо ваш улюблений напрямок (акварель, скетчинг чи digital), я допоможу зібрати правильний та бюджетний персональний набір.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Чи підходять заняття для дорослих без досвіду?</button>
+                    <div class="faq-answer">
+                        <p>Абсолютно! Більшість моїх дорослих учнів починають з нуля. Головне — це ваше бажання. Ми працюватимемо у вашому темпі: без суворої критики, стресу та скучних гіпсових голів.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Де проходять уроки малювання?</button>
+                    <div class="faq-answer">
+                        <p>Заняття проходять у вас вдома (у Бучі або Ірпіні). Вам не потрібно витрачати час на дорогу — ви навчаєтесь у своїй найкомфортнішій та розслабленій атмосфері.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

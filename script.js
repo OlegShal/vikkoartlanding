@@ -85,4 +85,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Images: NO reveal animation — just display immediately
 
+    /* ----------------------------------------------------------------
+       FAQ Accordion Logic
+    ---------------------------------------------------------------- */
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const isExpanded = question.getAttribute('aria-expanded') === 'true';
+            
+            // Close all others
+            faqQuestions.forEach(q => {
+                q.setAttribute('aria-expanded', 'false');
+                if(q.nextElementSibling) q.nextElementSibling.style.maxHeight = null;
+            });
+            
+            if (!isExpanded) {
+                question.setAttribute('aria-expanded', 'true');
+                const answer = question.nextElementSibling;
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        });
+    });
+
 });
