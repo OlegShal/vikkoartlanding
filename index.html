@@ -53,27 +53,20 @@
     <link rel="apple-touch-icon" href="raw/Favico.png">
 
     <!-- ═══════════════════════════════════════════
-         PERFORMANCE: PRECONNECT & PRELOAD
+         PERFORMANCE: CSS & FONTS (Highest Priority)
     ═══════════════════════════════════════════ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <!-- Preload above-the-fold image(s) -->
-    <link rel="preload" as="image" href="raw/Vikkoart.webp">
-    <link rel="preload" as="image" href="raw/i.webp">
-    <link rel="preload" as="image" href="raw/Background%20.webp">
-    <link rel="preload" as="style" href="style.css">
+    
+    <!-- 1. Our critical stylesheet first -->
+    <link rel="stylesheet" href="style.css">
 
-    <!-- ═══════════════════════════════════════════
-         FONTS & STYLES
-    ═══════════════════════════════════════════ -->
-    <!-- Non-blocking Google Fonts -->
+    <!-- 2. Google Fonts asynchronous loading to prevent render-blocking -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=Montserrat:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=Montserrat:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=Montserrat:wght@300;400;500;600&display=swap">
     </noscript>
-    <link rel="stylesheet" href="style.css">
 
     <!-- ═══════════════════════════════════════════
          STRUCTURED DATA — JSON-LD
@@ -182,15 +175,6 @@
     }
     </script>
 
-    <!-- ═══════════════════════════════════════════
-         GOOGLE ANALYTICS
-    ═══════════════════════════════════════════ -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YNBMK8Y1T"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-3YNBMK8Y1T');
     </script>
 </head>
 
@@ -454,6 +438,15 @@
     </div>
 
     <script src="script.js"></script>
+
+    <!-- Google Analytics (Deferred to avoid competing for initial bandwidth) -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-3YNBMK8Y1T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-3YNBMK8Y1T');
+    </script>
 </body>
 
 </html>

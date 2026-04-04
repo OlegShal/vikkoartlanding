@@ -20,16 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header-logo');
 
     if (floatingNav && header) {
-        const showNav = () => {
-            const headerBottom = header.getBoundingClientRect().bottom;
-            if (headerBottom < 0) {
-                floatingNav.classList.add('visible');
-            } else {
-                floatingNav.classList.remove('visible');
-            }
-        };
-        window.addEventListener('scroll', showNav, { passive: true });
-        showNav();
+        // Use IntersectionObserver instead of scroll event + getBoundingClientRect
+        // to avoid Forced Synchronous Layout which hurts mobile performance
+        const headerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // If header is completely out of view (above the viewport), show nav
+                if (!entry.isIntersecting && entry.boundingClientRect.bottom < 0) {
+                    floatingNav.classList.add('visible');
+                } else {
+                    floatingNav.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0 });
+        
+        headerObserver.observe(header);
     }
 
     /* ----------------------------------------------------------------
