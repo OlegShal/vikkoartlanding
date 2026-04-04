@@ -64,17 +64,13 @@ body {
    ============================================================ */
 .bg-texture {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100dvh;
+    inset: 0;
     background-image: url("raw/Background .webp");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     z-index: -5;
     pointer-events: none;
-    /* Push to its own GPU compositor layer so it never triggers a repaint on scroll */
     transform: translateZ(0);
     will-change: transform;
 }
