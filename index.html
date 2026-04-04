@@ -1,46 +1,224 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" prefix="og: https://ogp.me/ns#">
 
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- ═══════════════════════════════════════════
+         CHARSET & VIEWPORT (must be first)
+    ═══════════════════════════════════════════ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ═══════════════════════════════════════════
+         PRIMARY SEO
+    ═══════════════════════════════════════════ -->
+    <title>Vikko.Art — Художні курси та майстер-класи | Буча, Ірпінь</title>
+    <meta name="description"
+        content="Індивідуальні уроки малювання для дітей та дорослих у Бучі та Ірпіні. Скетчинг, акварель, олівець, digital-art. Перше знайомство — безкоштовно. Вікторія Vikko.Art">
+    <meta name="keywords"
+        content="уроки малювання Буча, художник Ірпінь, курси живопису, скетчинг, акварель, digital art, art lessons Ukraine, Vikko Art, індивідуальне навчання малюванню">
+    <meta name="author" content="Вікторія — Vikko.Art">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://lessons.vikkoart.me/">
+
+    <!-- ═══════════════════════════════════════════
+         OPEN GRAPH (Facebook, Telegram, LinkedIn…)
+    ═══════════════════════════════════════════ -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lessons.vikkoart.me/">
+    <meta property="og:title" content="Vikko.Art — Художні курси для дітей та дорослих">
+    <meta property="og:description"
+        content="Індивідуальні уроки малювання у Бучі та Ірпіні. Скетчинг, акварель, олівець, digital-art. Твій темп. Твій стиль.">
+    <meta property="og:image" content="https://lessons.vikkoart.me/raw/Vikkoart.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Vikko.Art — логотип художніх курсів">
+    <meta property="og:locale" content="uk_UA">
+    <meta property="og:site_name" content="Vikko.Art">
+
+    <!-- ═══════════════════════════════════════════
+         TWITTER / X CARD
+    ═══════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vikko.Art — Художні курси для дітей та дорослих">
+    <meta name="twitter:description" content="Індивідуальні уроки малювання у Бучі та Ірпіні. Твій темп. Твій стиль.">
+    <meta name="twitter:image" content="https://lessons.vikkoart.me/raw/Vikkoart.webp">
+    <meta name="twitter:image:alt" content="Vikko.Art логотип">
+
+    <!-- ═══════════════════════════════════════════
+         THEME & APP
+    ═══════════════════════════════════════════ -->
+    <meta name="theme-color" content="#0d1a33">
+    <meta name="msapplication-TileColor" content="#0d1a33">
+    <link rel="icon" type="image/png" sizes="32x32" href="raw/Favico.png">
+    <link rel="apple-touch-icon" href="raw/Favico.png">
+
+    <!-- ═══════════════════════════════════════════
+         PERFORMANCE: PRECONNECT & PRELOAD
+    ═══════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <!-- Preload above-the-fold image -->
+    <link rel="preload" as="image" href="raw/Vikkoart.webp">
+    <link rel="preload" as="image" href="raw/i.webp">
+    <link rel="preload" as="style" href="style.css">
+
+    <!-- ═══════════════════════════════════════════
+         FONTS & STYLES
+    ═══════════════════════════════════════════ -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ═══════════════════════════════════════════
+         STRUCTURED DATA — JSON-LD
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://lessons.vikkoart.me/#website",
+          "url": "https://lessons.vikkoart.me/",
+          "name": "Vikko.Art",
+          "description": "Художні курси та майстер-класи для дітей і дорослих",
+          "inLanguage": "uk"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://lessons.vikkoart.me/#webpage",
+          "url": "https://lessons.vikkoart.me/",
+          "name": "Vikko.Art — Художні курси та майстер-класи | Буча, Ірпінь",
+          "description": "Індивідуальні уроки малювання для дітей та дорослих у Бучі та Ірпіні.",
+          "isPartOf": { "@id": "https://lessons.vikkoart.me/#website" },
+          "inLanguage": "uk"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://lessons.vikkoart.me/#person",
+          "name": "Вікторія",
+          "alternateName": "Vikko",
+          "url": "https://lessons.vikkoart.me/",
+          "jobTitle": "Художник та викладач малювання",
+          "sameAs": [
+            "https://t.me/vikkoart",
+            "https://www.instagram.com/_vikko.textile.art_",
+            "https://www.instagram.com/_vikko.digital.art_",
+            "https://www.redbubble.com/people/vikko-art/shop",
+            "https://www.shutterstock.com/g/Vikkoart"
+          ]
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://lessons.vikkoart.me/#business",
+          "name": "Vikko.Art — Художні курси",
+          "description": "Індивідуальні уроки малювання: скетчинг, акварель, живопис, digital-art для дітей та дорослих у Бучі та Ірпіні.",
+          "url": "https://lessons.vikkoart.me/",
+          "logo": "https://lessons.vikkoart.me/raw/Vikkoart.webp",
+          "image": "https://lessons.vikkoart.me/raw/Vikkoart.webp",
+          "telephone": "",
+          "areaServed": [
+            { "@type": "City", "name": "Буча" },
+            { "@type": "City", "name": "Ірпінь" }
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Буча",
+            "addressRegion": "Київська область",
+            "addressCountry": "UA"
+          },
+          "priceRange": "400–500 грн/година",
+          "currenciesAccepted": "UAH",
+          "paymentAccepted": "Готівка, переказ",
+          "openingHours": "Mo-Su 09:00-20:00",
+          "employee": { "@id": "https://lessons.vikkoart.me/#person" },
+          "sameAs": [
+            "https://t.me/vikkoart",
+            "https://www.instagram.com/_vikko.textile.art_",
+            "https://www.instagram.com/_vikko.digital.art_"
+          ]
+        },
+        {
+          "@type": "Course",
+          "name": "Індивідуальні уроки малювання — Адаптація",
+          "description": "Перші 2 місяці: визначення сильних сторін учня, проба різних технік.",
+          "provider": { "@id": "https://lessons.vikkoart.me/#business" },
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "onsite",
+            "location": { "@type": "Place", "name": "Вдома у учня (Буча, Ірпінь)" }
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "400",
+            "priceCurrency": "UAH",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Course",
+          "name": "Індивідуальна програма та Проєкти",
+          "description": "Персональна програма: стікерпаки, персонажі, обкладинки, сторітелінг, живопис, анатомія.",
+          "provider": { "@id": "https://lessons.vikkoart.me/#business" },
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "onsite",
+            "location": { "@type": "Place", "name": "Вдома у учня (Буча, Ірпінь)" }
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "500",
+            "priceCurrency": "UAH",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+         GOOGLE ANALYTICS
+    ═══════════════════════════════════════════ -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YNBMK8Y1T"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-3YNBMK8Y1T');
     </script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vikko.Art | Художні курси та майстер-класи</title>
-    <meta name="description"
-        content="Vikko.Art - Художні курси, індивідуальні заняття, скетчинг, живопис та digital-art з Вікторією.">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=Montserrat:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="raw/Favico.png">
 </head>
 
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Floating Navigation -->
+    <nav class="floating-nav" id="floatingNav" aria-label="Навігація">
+        <a href="#hero">Про мене</a>
+        <a href="#path">Мій шлях</a>
+        <a href="#audience">Для кого</a>
+        <a href="#pricing">Вартість</a>
+        <a href="#contact">Контакт</a>
+    </nav>
+
     <div class="bg-texture"></div>
 
     <!-- Header Logo -->
     <header class="header-logo text-center">
-        <img src="raw/Vikkoart.webp" alt="Vikko.Art Logo" class="logo-img">
+        <!-- h1 is visually inside the logo image; we keep it accessible for crawlers -->
+        <h1 class="sr-only">Vikko.Art — Художні курси та майстер-класи у Бучі та Ірпіні</h1>
+        <img src="raw/Vikkoart.webp" alt="Vikko.Art — логотип художніх курсів Вікторії, Буча/Ірпінь" class="logo-img"
+            fetchpriority="high" width="1000" height="auto">
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section wrapper">
-        <h2 class="hero-subtitle">ЯКЩО ТИ ШУКАВ ЗНАК — ОСЬ ВІН</h2>
+    <section id="hero" class="hero-section wrapper">
+        <h2 class="hero-subtitle reveal">ЯКЩО ТИ ШУКАВ ЗНАК — ОСЬ ВІН</h2>
 
         <div class="hero-content">
-            <div class="hero-text left-text">
+            <div class="hero-text left-text reveal-left">
                 <p>Привіт, я Вікторія! Забудь про нудні лекції та нескінченні гіпсові фігури. Моя філософія проста: ми
                     малюємо те, що подобається саме тобі.</p>
                 <p>Академічна база — композиція, світлотінь та штрих — не будуть окремими уроками. Я м'яко вплету їх у
@@ -48,49 +226,58 @@
             </div>
 
             <div class="hero-image">
-                <img src="raw/i.webp" alt="Вікторія малює">
+                <img src="raw/i.webp" alt="Вікторія — художник та викладач малювання, Vikko.Art" fetchpriority="high">
             </div>
 
-            <div class="hero-text right-text">
+            <div class="hero-text right-text reveal-right">
                 <p>Тобі подобається аніме? Ми створимо твого персонажа. Хочеш розписати джинсовку? Зробимо це стильно.
                     Мрієш про реалістичні портрети? Почнемо з твоїх улюблених акторів</p>
             </div>
         </div>
 
-        <div class="hero-cta-block text-center mt-3">
+        <div class="hero-cta-block text-center mt-3 reveal">
             <h3 class="highlight-quote">Твій темп. Твій стиль. Твоя повна свобода.</h3>
             <a href="#contact" class="btn primary-btn pulse-anim">ПОЧАТИ ТВОРЧИЙ ШЛЯХ</a>
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- My Path Section -->
-    <section class="my-path-section wrapper">
-        <h2 class="section-title">Мій шлях!</h2>
-        <p class="section-subtitle">Від академізму до міжнародного визнання</p>
+    <section id="path" class="my-path-section wrapper">
+        <h2 class="section-title reveal">Мій шлях!</h2>
+        <p class="section-subtitle reveal">Від академізму до міжнародного визнання</p>
 
         <div class="path-items">
             <!-- 1. Класична база -->
-            <div class="path-item">
+            <div class="path-item reveal">
                 <div class="path-text">
                     <h3>1. Класична база та постійний розвиток</h3>
                     <p class="accent-text">Художня школа та архітектурна освіта</p>
                 </div>
                 <div class="image-gallery two-cols-small">
-                    <img src="raw/arch1.webp" alt="Архітектура 1">
-                    <img src="raw/arch2.webp" alt="Архітектура 2">
+                    <div class="img-wrap"><img src="raw/arch1.webp" alt="Архітектурний скетч Вікторії — академічна база"
+                            loading="lazy" width="250" height="200"></div>
+                    <div class="img-wrap"><img src="raw/arch2.webp"
+                            alt="Архітектурний малюнок — художня та архітектурна освіта" loading="lazy" width="250"
+                            height="200"></div>
                 </div>
 
                 <p class="accent-text mt-3">Скетчинг як спосіб мислення.</p>
                 <div class="image-gallery four-cols">
-                    <img src="raw/sketch1.webp" alt="Скетч 1">
-                    <img src="raw/sketch2.webp" alt="Скетч 2">
-                    <img src="raw/sketch3.webp" alt="Скетч 3">
-                    <img src="raw/sketch4.webp" alt="Скетч 4">
+                    <div class="img-wrap"><img src="raw/sketch1.webp" alt="Скетч Вікторії — урок скетчингу"
+                            loading="lazy" width="200" height="200"></div>
+                    <div class="img-wrap"><img src="raw/sketch2.webp" alt="Скетч архітектурного об'єкта олівцем"
+                            loading="lazy" width="200" height="200"></div>
+                    <div class="img-wrap"><img src="raw/sketch3.webp" alt="Міський скетч — урок малювання Буча"
+                            loading="lazy" width="200" height="200"></div>
+                    <div class="img-wrap"><img src="raw/sketch4.webp" alt="Пейзажний скетч — курси малювання Ірпінь"
+                            loading="lazy" width="200" height="200"></div>
                 </div>
             </div>
 
             <!-- 2. Володіння матеріалами -->
-            <div class="path-item">
+            <div class="path-item reveal">
                 <div class="path-text">
                     <h3>2. Володіння матеріалами</h3>
                     <p>Класичний живопис та графіка: Акварель, гуаш, акрил, олійні фарби та всі графічні матеріали
@@ -101,19 +288,23 @@
             </div>
 
             <!-- 3. Експерт із поверхонь -->
-            <div class="path-item">
+            <div class="path-item reveal">
                 <div class="path-text">
                     <h3>3. Експерт із поверхонь та кастомізації</h3>
                 </div>
                 <div class="image-gallery three-cols">
-                    <img src="raw/custom1.webp" alt="Кастом 1">
-                    <img src="raw/custom2.webp" alt="Кастом 2">
-                    <img src="raw/custom3.webp" alt="Кастом 3">
+                    <div class="img-wrap"><img src="raw/custom1.webp"
+                            alt="Кастомізація одягу розписом — роботи Vikko Art" loading="lazy" width="300"
+                            height="300"></div>
+                    <div class="img-wrap"><img src="raw/custom2.webp" alt="Розпис кросівок — кастом від Вікторії"
+                            loading="lazy" width="300" height="300"></div>
+                    <div class="img-wrap"><img src="raw/custom3.webp" alt="Кастомізація сумки — авторський розпис"
+                            loading="lazy" width="300" height="300"></div>
                 </div>
             </div>
 
             <!-- 4. Digital-art -->
-            <div class="path-item">
+            <div class="path-item reveal">
                 <div class="path-text">
                     <h3>4. Digital-art та комерційна діяльність</h3>
                     <ul>
@@ -124,14 +315,16 @@
                 </div>
                 <div class="button-group">
                     <a href="https://www.redbubble.com/people/vikko-art/shop?anchor=profile&asc=u" target="_blank"
-                        class="btn secondary-btn rounded-btn">Redbubble</a>
-                    <a href="https://www.shutterstock.com/g/Vikkoart" target="_blank"
-                        class="btn secondary-btn rounded-btn">Shutterstock</a>
+                        rel="noopener noreferrer" class="btn secondary-btn rounded-btn"
+                        aria-label="Магазин Vikko Art на Redbubble">Redbubble</a>
+                    <a href="https://www.shutterstock.com/g/Vikkoart" target="_blank" rel="noopener noreferrer"
+                        class="btn secondary-btn rounded-btn"
+                        aria-label="Портфоліо Vikko Art на Shutterstock">Shutterstock</a>
                 </div>
             </div>
 
             <!-- 5. Виставки -->
-            <div class="path-item">
+            <div class="path-item reveal">
                 <div class="path-text">
                     <h3>5. Виставки</h3>
                     <p>Постійний учасник Handmade Expo. Мої роботи представлені на найбільшій виставці хендмейду в
@@ -139,19 +332,23 @@
                     </p>
                 </div>
                 <div class="image-gallery two-cols-large">
-                    <img src="raw/HMexpo1.webp" alt="Виставка 1">
-                    <img src="raw/HMexpo2.webp" alt="Виставка 2">
+                    <div class="img-wrap"><img src="raw/HMexpo1.webp" alt="Стенд Vikko Art на Handmade Expo Україна"
+                            loading="lazy" width="450" height="350"></div>
+                    <div class="img-wrap"><img src="raw/HMexpo2.webp" alt="Роботи Вікторії на виставці Handmade Expo"
+                            loading="lazy" width="450" height="350"></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- For whom -->
-    <section class="audience-section wrapper">
-        <h2 class="section-title">Для кого заняття</h2>
+    <section id="audience" class="audience-section wrapper">
+        <h2 class="section-title reveal">Для кого заняття</h2>
 
         <div class="audience-grid">
-            <div class="audience-card">
+            <div class="audience-card reveal">
                 <h3>Діти та підлітки <span>(від 10 років)</span></h3>
                 <p><strong>-Тривалість:</strong> 1 — 1,5 години.</p>
                 <p><strong>-Що робимо:</strong> Ми не вчимо «нудну базу». Ми малюємо те, що цікаво саме дитині: від
@@ -159,7 +356,7 @@
                     непомітно та захопливо.</p>
             </div>
 
-            <div class="audience-card">
+            <div class="audience-card reveal">
                 <h3>Дорослі</h3>
                 <p><strong>-Тривалість:</strong> 1,5 — 3 години.</p>
                 <p><strong>-Що робимо:</strong> Для тих, хто хоче вимкнути шум зовнішнього світу та знайти час для себе.
@@ -167,7 +364,7 @@
                     вашої свободи та відпочинку.</p>
             </div>
 
-            <div class="audience-card col-span-2">
+            <div class="audience-card col-span-2 reveal">
                 <h3>Творчий вихідний для всієї родини</h3>
                 <p><strong>-Тривалість:</strong> до 4 годин</p>
                 <p><strong>-Що робимо:</strong> Створюємо разом спільну велику картину для дому або кожен окремо працює
@@ -179,27 +376,29 @@
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- Prices -->
-    <section class="pricing-section wrapper">
-        <h2 class="section-title">Формат навчання та вартість</h2>
+    <section id="pricing" class="pricing-section wrapper">
+        <h2 class="section-title reveal">Формат навчання та вартість</h2>
 
         <div class="pricing-steps">
-            <div class="price-step">
+            <div class="price-step reveal">
                 <h3>Етап 1: Знайомство <span>(Перша зустріч)</span></h3>
                 <p>Зустрічаємося на нейтральній території (у кав'ярні), щоб познайомитися, обговорити ваші цілі, мрії та
                     творчі запити. Це час, щоб зрозуміти, чи нам комфортно працювати разом.</p>
             </div>
 
-            <div class="price-step">
+            <div class="price-step reveal">
                 <h3>Етап 2: Адаптація <span>(Перші 2 місяці)</span></h3>
-                <div class="price-tag">-Вартість: 400 грн / година.</div>
+                <div class="price-tag">400 грн / година</div>
                 <p>Це випробувальний термін, під час якого ми визначаємо сильні та слабкі сторони учня. Ми пробуємо
                     різні техніки, щоб зрозуміти, що саме «драйвить» найбільше.</p>
             </div>
 
-            <div class="price-step">
+            <div class="price-step reveal">
                 <h3>Етап 3: Індивідуальна програма та Проєкти</h3>
-                <div class="price-tag">-Вартість: 500 грн / година.</div>
+                <div class="price-tag">500 грн / година</div>
                 <p>Після адаптації я розробляю персональну програму. Ми не просто малюємо — ми створюємо повноцінні
                     проєкти: від стікерпаків та розробки персонажів до обкладинок та сторітелінгу.</p>
                 <p>Ми проходимо всі етапи дизайну, паралельно вивчаючи анатомію, світлотінь та композицію через реальні
@@ -207,7 +406,7 @@
             </div>
         </div>
 
-        <div class="tech-details">
+        <div class="tech-details reveal">
             <h3>Технічні деталі:</h3>
             <ul>
                 <li><strong>-Локація:</strong> Заняття проходять у вас вдома (Буча, Ірпінь).</li>
@@ -219,24 +418,34 @@
 
     <!-- Footer / CTA -->
     <footer id="contact" class="footer-cta wrapper">
-        <h2 class="section-title text-center">Готові зробити перший крок?</h2>
-        <p class="text-center cta-text">
+        <h2 class="section-title text-center reveal">Готові зробити перший крок?</h2>
+        <p class="text-center cta-text reveal">
             Не обов'язково мати план чи навички вже зараз. Достатньо просто мати бажання творити. Напишіть мені, і ми
             домовимося про першу зустріч за кавою, щоб познайомитися та обговорити ваші ідеї.
         </p>
 
-        <div class="social-links">
-            <a href="https://t.me/vikkoart" target="_blank" class="btn secondary-btn rounded-btn">Telegram</a>
+        <address class="social-links reveal" style="font-style:normal">
+            <a href="https://t.me/vikkoart" target="_blank" rel="noopener noreferrer"
+                class="btn secondary-btn rounded-btn" aria-label="Написати Вікторії в Telegram">Telegram</a>
             <a href="https://www.instagram.com/_vikko.textile.art_?igsh=MWt3cXM1MWFzcmJpcA%3D%3D&utm_source=qr"
-                target="_blank" class="btn secondary-btn rounded-btn">Instagram1</a>
+                target="_blank" rel="noopener noreferrer" class="btn secondary-btn rounded-btn"
+                aria-label="Instagram Vikko — текстиль і хендмейд">Instagram: Textile</a>
             <a href="https://www.instagram.com/_vikko.digital.art_?igsh=MXR4djRzNTNkeDNjZQ%3D%3D&utm_source=qr"
-                target="_blank" class="btn secondary-btn rounded-btn">Instagram2</a>
-        </div>
+                target="_blank" rel="noopener noreferrer" class="btn secondary-btn rounded-btn"
+                aria-label="Instagram Vikko — digital art">Instagram: Digital</a>
+        </address>
 
-        <p class="final-quote">Творчість — це свобода бути собою.</p>
+        <p class="final-quote reveal">Творчість — це свобода бути собою.</p>
 
-        <img src="raw/Vikkoart.webp" alt="Vikko.Art Logo" class="logo-img footer-logo">
+        <img src="raw/Vikkoart.webp" alt="Vikko.Art — логотип художніх курсів" class="logo-img footer-logo"
+            loading="lazy">
     </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Переглянути зображення">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Закрити">&times;</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    </div>
 
     <script src="script.js"></script>
 </body>

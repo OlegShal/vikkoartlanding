@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block irrelevant paths
+Disallow: /raw/Background .webp
+
+# Sitemap location
+Sitemap: https://lessons.vikkoart.me/sitemap.xml

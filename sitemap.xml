@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://lessons.vikkoart.me/</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+
+    <!-- Logo / brand -->
+    <image:image>
+      <image:loc>https://lessons.vikkoart.me/raw/Vikkoart.webp</image:loc>
+      <image:title>Vikko.Art — логотип художніх курсів</image:title>
+      <image:caption>Vikko.Art — індивідуальні уроки малювання у Бучі та Ірпіні</image:caption>
+    </image:image>
+
+    <!-- Hero photo -->
+    <image:image>
+      <image:loc>https://lessons.vikkoart.me/raw/i.webp</image:loc>
+      <image:title>Вікторія — художник і викладач малювання</image:title>
+      <image:caption>Художник Вікторія (Vikko.Art) — індивідуальні уроки від ескізу до готового проєкту</image:caption>
+    </image:image>
+
+    <!-- Architecture sketches -->
+    <image:image>
+      <image:loc>https://lessons.vikkoart.me/raw/arch1.webp</image:loc>
+      <image:title>Архітектурний скетч — академічна база</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lessons.vikkoart.me/raw/arch2.webp</image:loc>
+      <image:title>Архітектурний малюнок — художня освіта</image:title>
+    </image:image>
+
+    <!-- Sketches -->
+    <image:image>
+      <image:loc>https://lessons.vikkoart.me/raw/sketch1.webp</image:loc>
+      <image:title>Скетч — урок скетчингу Vikko.Art</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lessons.vikkoart.me/raw/sketch2.webp</image:loc>
+      <image:title>Архітектурний скетч олівцем</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lessons.vikkoart.me/raw/sketch3.webp</image:loc>
+      <image:title>Міський скетч — навчання малюванню</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lessons.vikkoart.me/raw/sketch4.webp</image:loc>
+      <image:title>Пейзажний скетч — курси малювання</image:title>
+    </image:image>
+
+    <!-- Custom work -->
+    <image:image>
+      <image:loc>https://lessons.vikkoart.me/raw/custom1.webp</image:loc>
+      <image:title>Кастомізація одягу розписом — Vikko.Art</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lessons.vikkoart.me/raw/custom2.webp</image:loc>
+      <image:title>Розпис кросівок — авторська кастомізація</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lessons.vikkoart.me/raw/custom3.webp</image:loc>
+      <image:title>Кастомізація сумки — унікальний розпис</image:title>
+    </image:image>
+
+    <!-- Exhibitions -->
+    <image:image>
+      <image:loc>https://lessons.vikkoart.me/raw/HMexpo1.webp</image:loc>
+      <image:title>Стенд Vikko Art на Handmade Expo Україна</image:title>
+      <image:caption>Вікторія як постійний учасник найбільшої виставки хендмейду в Україні</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lessons.vikkoart.me/raw/HMexpo2.webp</image:loc>
+      <image:title>Роботи Вікторії на виставці Handmade Expo</image:title>
+    </image:image>
+  </url>
+
+</urlset>
