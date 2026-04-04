@@ -64,7 +64,10 @@ body {
    ============================================================ */
 .bg-texture {
     position: fixed;
-    inset: 0;
+    top: -10vh;
+    left: -10vw;
+    width: 120vw;
+    height: 120vh;
     background-image: url("raw/Background .webp");
     background-size: cover;
     background-position: center center;
