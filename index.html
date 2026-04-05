@@ -337,10 +337,12 @@
 
                 <div class="hero-image">
                     <picture>
-                        <source srcset="raw/i-mobile.avif 500w, raw/i.avif 678w" sizes="(max-width: 500px) 500px, 678px"
-                            type="image/avif">
-                        <source srcset="raw/i-mobile.webp 500w, raw/i.webp 678w" sizes="(max-width: 500px) 500px, 678px"
-                            type="image/webp">
+                        <source media="(max-width: 500px)" srcset="raw/i-mobile.avif" type="image/avif">
+                        <source srcset="raw/i.avif" type="image/avif">
+
+                        <source media="(max-width: 500px)" srcset="raw/i-mobile.webp" type="image/webp">
+                        <source srcset="raw/i.webp" type="image/webp">
+
                         <img src="raw/i.webp" alt="Вікторія — художник та викладач малювання, Vikko.Art"
                             fetchpriority="high" loading="eager" decoding="async" width="678" height="991"
                             id="hero-main-img">
