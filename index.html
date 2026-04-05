@@ -312,9 +312,14 @@
     <header class="header-logo text-center">
         <!-- h1 is visually inside the logo image; we keep it accessible for crawlers -->
         <h1 class="sr-only">Уроки малювання в Бучі та Ірпені — Vikko.Art</h1>
-        <img src="raw/Vikkoart.webp" srcset="raw/Vikkoart-mobile.webp 800w, raw/Vikkoart.webp 1201w"
-            sizes="(max-width: 800px) 100vw, 1201px" alt="Vikko.Art — логотип художніх курсів Вікторії, Буча/Ірпінь"
-            class="logo-img" fetchpriority="high" width="1201" height="638" decoding="async">
+        <picture>
+            <source srcset="raw/Vikkoart-mobile.avif 800w, raw/Vikkoart.avif 1201w" 
+                sizes="(max-width: 800px) 100vw, 1201px" type="image/avif">
+            <source srcset="raw/Vikkoart-mobile.webp 800w, raw/Vikkoart.webp 1201w" 
+                sizes="(max-width: 800px) 100vw, 1201px" type="image/webp">
+            <img src="raw/Vikkoart.webp" alt="Vikko.Art — логотип художніх курсів Вікторії, Буча/Ірпінь"
+                class="logo-img" fetchpriority="high" width="1201" height="638" decoding="async">
+        </picture>
     </header>
 
     <main>
@@ -333,10 +338,14 @@
                 </div>
 
                 <div class="hero-image">
-                    <img src="raw/i.webp" srcset="raw/i-mobile.webp 600w, raw/i.webp 901w"
-                        sizes="(max-width: 600px) 600px, 901px"
-                        alt="Вікторія — художник та викладач малювання, Vikko.Art" fetchpriority="high" 
-                        loading="eager" decoding="async" width="901" height="1296">
+                    <picture>
+                        <source srcset="raw/i-mobile.avif 600w, raw/i.avif 901w" 
+                            sizes="(max-width: 600px) 600px, 901px" type="image/avif">
+                        <source srcset="raw/i-mobile.webp 600w, raw/i.webp 901w" 
+                            sizes="(max-width: 600px) 600px, 901px" type="image/webp">
+                        <img src="raw/i.webp" alt="Вікторія — художник та викладач малювання, Vikko.Art" 
+                            fetchpriority="high" loading="eager" decoding="async" width="901" height="1296">
+                    </picture>
                 </div>
 
                 <div class="hero-text right-text">
@@ -597,9 +606,14 @@
 
         <p class="final-quote reveal">Творчість — це свобода бути собою.</p>
 
-        <img src="raw/Vikkoart.webp" srcset="raw/Vikkoart-mobile.webp 800w, raw/Vikkoart.webp 1201w" 
-            sizes="(max-width: 800px) 100vw, 400px" alt="Vikko.Art — логотип художніх курсів" class="logo-img footer-logo"
-            loading="lazy" width="350" height="186">
+        <picture>
+            <source srcset="raw/Vikkoart-mobile.avif 800w, raw/Vikkoart.avif 1201w" 
+                sizes="(max-width: 800px) 100vw, 400px" type="image/avif">
+            <source srcset="raw/Vikkoart-mobile.webp 800w, raw/Vikkoart.webp 1201w" 
+                sizes="(max-width: 800px) 100vw, 400px" type="image/webp">
+            <img src="raw/Vikkoart.webp" alt="Vikko.Art — логотип художніх курсів" class="logo-img footer-logo"
+                loading="lazy" width="350" height="186">
+        </picture>
     </footer>
 
     <script src="script.js" defer></script>

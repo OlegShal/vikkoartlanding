@@ -69,6 +69,14 @@ body {
     width: 120vw;
     height: 120vh;
     background-image: url("raw/background-hero.webp");
+    background-image: -webkit-image-set(
+        url("raw/background-hero.avif") type("image/avif"),
+        url("raw/background-hero.webp") type("image/webp")
+    );
+    background-image: image-set(
+        url("raw/background-hero.avif") type("image/avif"),
+        url("raw/background-hero.webp") type("image/webp")
+    );
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -81,6 +89,14 @@ body {
 @media (max-width: 600px) {
     .bg-texture {
         background-image: url("raw/background-mobile.webp");
+        background-image: -webkit-image-set(
+            url("raw/background-mobile.avif") type("image/avif"),
+            url("raw/background-mobile.webp") type("image/webp")
+        );
+        background-image: image-set(
+            url("raw/background-mobile.avif") type("image/avif"),
+            url("raw/background-mobile.webp") type("image/webp")
+        );
     }
 }
 
