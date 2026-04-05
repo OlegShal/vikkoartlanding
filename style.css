@@ -1165,3 +1165,29 @@ h3 {
         padding: 6px 28px;
     }
 }
+
+@media (max-width: 768px) {
+    .hero-image {
+        display: contents;
+        /* Убирает обертку из визуального потока */
+    }
+
+    .hero-image picture {
+        float: left;
+        width: 58%;
+        margin: 4px 5px 2px 0;
+        shape-outside: ellipse(80% 50% at 20% 50%);
+        shape-margin: 5px;
+    }
+
+    /* Остальные твои стили из медиазапроса */
+    .hero-content {
+        display: block;
+        text-align: left;
+    }
+
+    .hero-text {
+        display: block;
+        margin-bottom: 0;
+    }
+}

@@ -21,14 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ----------------------------------------------------------------
-       Floating Navigation – appears after scrolling past the header
+       Floating Navigation – appears after scrolling past the header or hero title
     ---------------------------------------------------------------- */
     const floatingNav = document.getElementById('floatingNav');
-    const header = document.querySelector('.header-logo');
+    // Fallback if header is hidden
+    const headerNode = document.querySelector('.header-logo') || document.querySelector('.hero-subtitle');
 
-    if (floatingNav && header) {
+    if (floatingNav && headerNode) {
         const headerObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
+                // Show floating nav when the trigger element is scrolled past the top
                 if (!entry.isIntersecting && entry.boundingClientRect.bottom < 0) {
                     floatingNav.classList.add('visible');
                 } else {
@@ -37,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { threshold: 0 });
 
-        headerObserver.observe(header);
+        headerObserver.observe(headerNode);
     }
 
     /* ----------------------------------------------------------------
