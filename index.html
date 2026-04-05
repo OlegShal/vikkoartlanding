@@ -65,9 +65,9 @@
     ═══════════════════════════════════════════ -->
     <link rel="preload" href="fonts/montserrat-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="raw/background-hero.webp" as="image">
-    <link rel="preload" href="raw/Vikkoart.webp" as="image" fetchpriority="high">
-    <link rel="preload" href="raw/i.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="raw/background-hero.webp" as="image" imagesrcset="raw/background-mobile.webp 800w, raw/background-hero.webp 1201w" imagesizes="100vw">
+    <link rel="preload" href="raw/Vikkoart.webp" as="image" fetchpriority="high" imagesrcset="raw/Vikkoart-mobile.webp 600w, raw/Vikkoart.webp 1201w" imagesizes="(max-width: 600px) 600px, 1201px">
+    <link rel="preload" href="raw/i.webp" as="image" fetchpriority="high" imagesrcset="raw/i-mobile.webp 600w, raw/i.webp 901w" imagesizes="(max-width: 600px) 600px, 901px">
 
     <!-- ═══════════════════════════════════════════
          PERFORMANCE: CSS & FONTS (Highest Priority)
@@ -293,7 +293,10 @@
     <header class="header-logo text-center">
         <!-- h1 is visually inside the logo image; we keep it accessible for crawlers -->
         <h1 class="sr-only">Уроки малювання в Бучі та Ірпені — Vikko.Art</h1>
-        <img src="raw/Vikkoart.webp" alt="Vikko.Art — логотип художніх курсів Вікторії, Буча/Ірпінь" class="logo-img"
+        <img src="raw/Vikkoart.webp" 
+             srcset="raw/Vikkoart-mobile.webp 600w, raw/Vikkoart.webp 1201w"
+             sizes="(max-width: 600px) 600px, 1201px"
+             alt="Vikko.Art — логотип художніх курсів Вікторії, Буча/Ірпінь" class="logo-img"
             fetchpriority="high" width="1000" height="auto">
     </header>
 
@@ -313,7 +316,10 @@
                 </div>
 
                 <div class="hero-image">
-                    <img src="raw/i.webp" alt="Вікторія — художник та викладач малювання, Vikko.Art"
+                    <img src="raw/i.webp" 
+                         srcset="raw/i-mobile.webp 600w, raw/i.webp 901w"
+                         sizes="(max-width: 600px) 600px, 901px"
+                         alt="Вікторія — художник та викладач малювання, Vikko.Art"
                         fetchpriority="high">
                 </div>
 

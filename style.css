@@ -136,6 +136,12 @@ body {
     will-change: transform;
 }
 
+@media (max-width: 600px) {
+    .bg-texture {
+        background-image: url("raw/background-mobile.webp");
+    }
+}
+
 /* ============================================================
    Floating Navigation
    ============================================================ */
