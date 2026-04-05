@@ -1167,20 +1167,21 @@ h3 {
 }
 
 @media (max-width: 768px) {
-    .hero-image {
-        display: contents;
-        /* Убирает обертку из визуального потока */
+    .desktop-only {
+        display: none !important;
     }
 
-    .hero-image picture {
+    /* User's working <img> inside <p> solution for mobile */
+    .mobile-only-hero-img {
+        display: block !important;
+        width: 200px;
         float: left;
-        width: 58%;
-        margin: 4px 5px 2px 0;
-        shape-outside: ellipse(80% 50% at 20% 50%);
+        margin: 4px 15px 12px 0;
+        shape-outside: url("raw/i-mobile.avif");
         shape-margin: 5px;
     }
 
-    /* Остальные твои стили из медиазапроса */
+    /* Standard block flow for mobile to allow floating wrapping */
     .hero-content {
         display: block;
         text-align: left;
@@ -1190,4 +1191,9 @@ h3 {
         display: block;
         margin-bottom: 0;
     }
+}
+
+/* Global: Hide the specialized mobile-fallback image by default (Desktop) */
+.mobile-only-hero-img {
+    display: none;
 }
