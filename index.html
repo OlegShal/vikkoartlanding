@@ -53,21 +53,23 @@
     <meta name="msapplication-TileColor" content="#0d1a33">
     <!-- Primary favicon.ico (fallback for older browsers & default for Googlebot) -->
     <link rel="icon" href="https://lessons.vikkoart.me/favicon.ico" sizes="any">
-    
+
     <!-- Modern SVG or proper PNG mapping -->
     <link rel="icon" type="image/png" sizes="96x96" href="https://lessons.vikkoart.me/raw/Favico.png">
-    
+
     <!-- Apple Touch Icon for iOS -->
     <link rel="apple-touch-icon" href="https://lessons.vikkoart.me/raw/Favico.png">
 
-    <!-- ═══════════════════════════════════════════
-         CRITICAL ASSETS PRELOAD
-    ═══════════════════════════════════════════ -->
-    <link rel="preload" href="fonts/montserrat-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="raw/background-hero.webp" as="image" imagesrcset="raw/background-mobile.webp 800w, raw/background-hero.webp 1201w" imagesizes="100vw">
-    <link rel="preload" href="raw/Vikkoart.webp" as="image" fetchpriority="high" imagesrcset="raw/Vikkoart-mobile.webp 600w, raw/Vikkoart.webp 1201w" imagesizes="(max-width: 600px) 600px, 1201px">
-    <link rel="preload" href="raw/i.webp" as="image" fetchpriority="high" imagesrcset="raw/i-mobile.webp 600w, raw/i.webp 901w" imagesizes="(max-width: 600px) 600px, 901px">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Comfortaa:wght@300;700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="preload" href="raw/background-hero.webp" as="image"
+        imagesrcset="raw/background-mobile.webp 800w, raw/background-hero.webp 1201w" imagesizes="100vw">
+    <link rel="preload" href="raw/Vikkoart.webp" as="image" fetchpriority="high"
+        imagesrcset="raw/Vikkoart-mobile.webp 600w, raw/Vikkoart.webp 1201w"
+        imagesizes="(max-width: 600px) 600px, 1201px">
+    <link rel="preload" href="raw/i.webp" as="image" fetchpriority="high"
+        imagesrcset="raw/i-mobile.webp 600w, raw/i.webp 901w" imagesizes="(max-width: 600px) 600px, 901px">
 
     <!-- ═══════════════════════════════════════════
          PERFORMANCE: CSS & FONTS (Highest Priority)
@@ -88,6 +90,7 @@
             --font-body: 'Montserrat', sans-serif;
             --font-cursive: 'Caveat', cursive;
         }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
@@ -95,6 +98,7 @@
             font-family: var(--font-body);
             overflow-x: hidden;
         }
+
         .bg-texture {
             position: fixed;
             top: -10vh;
@@ -109,9 +113,31 @@
             pointer-events: none;
             transform: translateZ(0);
         }
-        .header-logo { text-align: center; margin: 44px auto 0 auto; }
-        .logo-img { max-width: 100%; height: auto; width: 1000px; display: block; margin: 0 auto; }
-        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+        .header-logo {
+            text-align: center;
+            margin: 44px auto 0 auto;
+        }
+
+        .logo-img {
+            max-width: 100%;
+            height: auto;
+            width: 1000px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 
     <!-- 1. Our critical stylesheet first -->
@@ -293,11 +319,9 @@
     <header class="header-logo text-center">
         <!-- h1 is visually inside the logo image; we keep it accessible for crawlers -->
         <h1 class="sr-only">Уроки малювання в Бучі та Ірпені — Vikko.Art</h1>
-        <img src="raw/Vikkoart.webp" 
-             srcset="raw/Vikkoart-mobile.webp 600w, raw/Vikkoart.webp 1201w"
-             sizes="(max-width: 600px) 600px, 1201px"
-             alt="Vikko.Art — логотип художніх курсів Вікторії, Буча/Ірпінь" class="logo-img"
-            fetchpriority="high" width="1000" height="auto">
+        <img src="raw/Vikkoart.webp" srcset="raw/Vikkoart-mobile.webp 600w, raw/Vikkoart.webp 1201w"
+            sizes="(max-width: 600px) 600px, 1201px" alt="Vikko.Art — логотип художніх курсів Вікторії, Буча/Ірпінь"
+            class="logo-img" fetchpriority="high" width="1000" height="auto">
     </header>
 
     <main>
@@ -316,11 +340,9 @@
                 </div>
 
                 <div class="hero-image">
-                    <img src="raw/i.webp" 
-                         srcset="raw/i-mobile.webp 600w, raw/i.webp 901w"
-                         sizes="(max-width: 600px) 600px, 901px"
-                         alt="Вікторія — художник та викладач малювання, Vikko.Art"
-                        fetchpriority="high">
+                    <img src="raw/i.webp" srcset="raw/i-mobile.webp 600w, raw/i.webp 901w"
+                        sizes="(max-width: 600px) 600px, 901px"
+                        alt="Вікторія — художник та викладач малювання, Vikko.Art" fetchpriority="high">
                 </div>
 
                 <div class="hero-text right-text reveal-right">
@@ -352,8 +374,8 @@
                     </div>
                     <div class="image-gallery two-cols-small">
                         <div class="img-wrap"><img src="raw/arch1.webp"
-                                alt="Архітектурний скетч — уроки малювання для дорослих у Бучі" loading="lazy" width="250"
-                                height="200"></div>
+                                alt="Архітектурний скетч — уроки малювання для дорослих у Бучі" loading="lazy"
+                                width="250" height="200"></div>
                         <div class="img-wrap"><img src="raw/arch2.webp"
                                 alt="Академічний малюнок — курси живопису Ірпінь" loading="lazy" width="250"
                                 height="200"></div>
@@ -367,8 +389,9 @@
                                 loading="lazy" width="200" height="200"></div>
                         <div class="img-wrap"><img src="raw/sketch3.webp" alt="Міський скетч — урок малювання Буча"
                                 loading="lazy" width="200" height="200"></div>
-                        <div class="img-wrap"><img src="raw/sketch4.webp" alt="Пейзажний скетч — індивідуальні курси малювання Ірпінь"
-                                loading="lazy" width="200" height="200"></div>
+                        <div class="img-wrap"><img src="raw/sketch4.webp"
+                                alt="Пейзажний скетч — індивідуальні курси малювання Ірпінь" loading="lazy" width="200"
+                                height="200"></div>
                     </div>
                 </div>
 
@@ -527,21 +550,27 @@
             <h2 class="section-title reveal">Часті питання</h2>
             <div class="faq-accordion reveal">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Чи потрібно купувати матеріали для першого заняття?</button>
+                    <button class="faq-question" aria-expanded="false">Чи потрібно купувати матеріали для першого
+                        заняття?</button>
                     <div class="faq-answer">
-                        <p>Ні, на перше заняття я можу взяти необхідні базові матеріали. Далі, коли ми визначимо ваш улюблений напрямок (акварель, скетчинг чи digital), я допоможу зібрати правильний та бюджетний персональний набір.</p>
+                        <p>Ні, на перше заняття я можу взяти необхідні базові матеріали. Далі, коли ми визначимо ваш
+                            улюблений напрямок (акварель, скетчинг чи digital), я допоможу зібрати правильний та
+                            бюджетний персональний набір.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Чи підходять заняття для дорослих без досвіду?</button>
+                    <button class="faq-question" aria-expanded="false">Чи підходять заняття для дорослих без
+                        досвіду?</button>
                     <div class="faq-answer">
-                        <p>Абсолютно! Більшість моїх дорослих учнів починають з нуля. Головне — це ваше бажання. Ми працюватимемо у вашому темпі: без суворої критики, стресу та скучних гіпсових голів.</p>
+                        <p>Абсолютно! Більшість моїх дорослих учнів починають з нуля. Головне — це ваше бажання. Ми
+                            працюватимемо у вашому темпі: без суворої критики, стресу та скучних гіпсових голів.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">Де проходять уроки малювання?</button>
                     <div class="faq-answer">
-                        <p>Заняття проходять у вас вдома (у Бучі або Ірпіні). Вам не потрібно витрачати час на дорогу — ви навчаєтесь у своїй найкомфортнішій та розслабленій атмосфері.</p>
+                        <p>Заняття проходять у вас вдома (у Бучі або Ірпіні). Вам не потрібно витрачати час на дорогу —
+                            ви навчаєтесь у своїй найкомфортнішій та розслабленій атмосфері.</p>
                     </div>
                 </div>
             </div>
@@ -563,11 +592,13 @@
             <a href="https://www.instagram.com/_vikko.textile.art_?igsh=MWt3cXM1MWFzcmJpcA%3D%3D&utm_source=qr"
                 target="_blank" rel="noopener noreferrer" class="btn secondary-btn rounded-btn"
                 aria-label="Instagram Vikko — текстиль і хендмейд"
-                onclick="gtag('event', 'click_on_social', { 'social_network': 'Instagram Textile' });">Instagram: Textile</a>
+                onclick="gtag('event', 'click_on_social', { 'social_network': 'Instagram Textile' });">Instagram:
+                Textile</a>
             <a href="https://www.instagram.com/_vikko.digital.art_?igsh=MXR4djRzNTNkeDNjZQ%3D%3D&utm_source=qr"
                 target="_blank" rel="noopener noreferrer" class="btn secondary-btn rounded-btn"
                 aria-label="Instagram Vikko — digital art"
-                onclick="gtag('event', 'click_on_social', { 'social_network': 'Instagram Digital' });">Instagram: Digital</a>
+                onclick="gtag('event', 'click_on_social', { 'social_network': 'Instagram Digital' });">Instagram:
+                Digital</a>
         </address>
 
         <p class="final-quote reveal">Творчість — це свобода бути собою.</p>
