@@ -62,14 +62,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Comfortaa:wght@300;700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="preload" href="raw/background-hero.webp" as="image"
-        imagesrcset="raw/background-mobile.webp 800w, raw/background-hero.webp 1201w" imagesizes="100vw">
-    <link rel="preload" href="raw/Vikkoart.webp" as="image" fetchpriority="high"
-        imagesrcset="raw/Vikkoart-mobile.webp 600w, raw/Vikkoart.webp 1201w"
-        imagesizes="(max-width: 600px) 600px, 1201px">
-    <link rel="preload" href="raw/i.webp" as="image" fetchpriority="high"
-        imagesrcset="raw/i-mobile.webp 600w, raw/i.webp 901w" imagesizes="(max-width: 600px) 600px, 901px">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Comfortaa:wght@300;700&family=Montserrat:wght@300;600&display=swap" media="print" onload="this.media='all'">
 
     <!-- ═══════════════════════════════════════════
          PERFORMANCE: CSS & FONTS (Highest Priority)
@@ -321,7 +314,7 @@
         <h1 class="sr-only">Уроки малювання в Бучі та Ірпені — Vikko.Art</h1>
         <img src="raw/Vikkoart.webp" srcset="raw/Vikkoart-mobile.webp 600w, raw/Vikkoart.webp 1201w"
             sizes="(max-width: 600px) 600px, 1201px" alt="Vikko.Art — логотип художніх курсів Вікторії, Буча/Ірпінь"
-            class="logo-img" fetchpriority="high" width="1000" height="auto">
+            class="logo-img" fetchpriority="high" width="1201" height="638" decoding="async">
     </header>
 
     <main>
@@ -342,7 +335,8 @@
                 <div class="hero-image">
                     <img src="raw/i.webp" srcset="raw/i-mobile.webp 600w, raw/i.webp 901w"
                         sizes="(max-width: 600px) 600px, 901px"
-                        alt="Вікторія — художник та викладач малювання, Vikko.Art" fetchpriority="high">
+                        alt="Вікторія — художник та викладач малювання, Vikko.Art" fetchpriority="high" 
+                        loading="eager" decoding="async" width="901" height="1296">
                 </div>
 
                 <div class="hero-text right-text reveal-right">
@@ -608,6 +602,17 @@
     </footer>
 
     <script src="script.js" defer></script>
+    <script>
+        // Defer background texture loading to improve LCP
+        window.addEventListener('load', () => {
+            const bg = document.querySelector('.bg-texture');
+            if (bg) {
+                const isMobile = window.innerWidth <= 600;
+                const imageUrl = isMobile ? 'raw/background-mobile.webp' : 'raw/background-hero.webp';
+                bg.style.backgroundImage = `url("${imageUrl}")`;
+            }
+        });
+    </script>
 </body>
 
 </html>
