@@ -3,7 +3,7 @@
    ============================================================ */
 :root {
     --bg-color: #0d1a33;
-    --text-main: #f0f4f8;
+    --text-main: #ffffff;
     --text-accent: #ffffff;
     --btn-fill: #606A42;
     --btn-border: #EBE05E;
@@ -42,6 +42,7 @@ body {
     font-size: 16px;
     line-height: 1.7;
     overflow-x: hidden;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* ============================================================
@@ -221,13 +222,14 @@ h3 {
    Hero Section
    ============================================================ */
 .hero-subtitle {
-    font-family: var(--font-heading);
-    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-family: var(--font-cursive);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
     text-align: center;
     margin-bottom: 44px;
-    letter-spacing: 3px;
-    opacity: 0.9;
+    letter-spacing: normal;
+    opacity: 1;
     position: relative;
+    font-weight: 400;
 }
 
 .hero-content {
@@ -243,19 +245,21 @@ h3 {
     flex: 1 1 280px;
 }
 
-.hero-text p {
-    margin-bottom: 20px;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    opacity: 0.92;
+.hero-text.intro-top-text {
+    order: 1;
 }
 
 .hero-image {
+    order: 2;
     flex: 1 1 300px;
     display: flex;
     justify-content: center;
     width: 100%;
     position: relative;
+}
+
+.hero-text.main-body-text {
+    order: 3;
 }
 
 .hero-image::before {
@@ -964,17 +968,37 @@ h3 {
     }
 
     .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-text.left-text,
-    .hero-text.right-text {
-        order: 2;
+        display: block;
+        text-align: left;
     }
 
     .hero-image {
-        order: 1;
+        float: left;
+        width: 48%; /* A bit smaller for better breathing room */
+        margin: 4px 20px 12px 0;
+        shape-outside: url("raw/i-mobile.webp");
+        shape-margin: 15px;
+        flex: none;
+    }
+
+    .hero-image img {
+        max-height: 340px;
+        animation: none;
+    }
+
+    .hero-text.intro-top-text {
+        margin-bottom: 24px; /* Space before the wrapping starts */
+    }
+
+    .hero-text {
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        line-height: 1.65;
+        margin-bottom: 16px;
     }
 
     .audience-grid {
