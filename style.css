@@ -224,6 +224,124 @@ h3 {
     font-weight: 400;
 }
 
+/* ───────────────────────────────────────────────────────────
+   Magic 'Word' Effects (Variants for "ЗНАК")
+   ─────────────────────────────────────────────────────────── */
+
+.magic-sign {
+    position: relative;
+    display: inline;
+    /* Back to inline for perfect flow without jumps */
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    background-image: linear-gradient(to right,
+            #ffffff, #ffeb3b, #ff9800, #ff5722, #e91e63, #ffffff);
+    background-size: 200% auto;
+    animation: rainbowShift 8s linear infinite;
+    z-index: 10;
+    /* Horizontal padding and negative margin fix clipping */
+    padding: 0 10px;
+    margin: 0 -8px;
+    vertical-align: baseline;
+}
+
+/* 2. Sparkle Variant (Animated Star on ::after) */
+.magic-sign::after {
+    content: '✦';
+    position: absolute;
+    font-size: 0.8rem;
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    animation: sparkle 1.5s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    bottom: 5px;
+    right: -12px;
+    animation-delay: 0.8s;
+}
+
+/* 3. Idea Bulb on Hover - Fixed color & visibility */
+.magic-sign::before {
+    content: '💡';
+    position: absolute;
+    top: -1.4em;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    font-size: 1.4rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    /* DOUBLE GLOW for maximum impact */
+    filter: drop-shadow(0 0 10px rgba(255, 235, 59, 1)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.9));
+    z-index: 100;
+    /* CRITICAL: reset parent text-clipping & transparency */
+    color: initial;
+    -webkit-text-fill-color: initial;
+    background: none;
+    -webkit-background-clip: border-box;
+}
+
+.magic-sign:hover::before {
+    opacity: 1;
+    animation: bulbBounce 1.5s ease-in-out infinite;
+}
+
+/* Remove magic-bulb styles as per request */
+
+/* Keyframes */
+@keyframes rainbowShift {
+    0% {
+        background-position: 0% 0%
+    }
+
+    100% {
+        background-position: -200% 0%
+    }
+}
+
+@keyframes bulbBounce {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-6px);
+    }
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2) rotate(45deg);
+        opacity: 1;
+    }
+}
+
+@keyframes bulbBounce {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-5px);
+        opacity: 1;
+    }
+}
+
 .hero-content {
     display: flex;
     flex-wrap: wrap;
