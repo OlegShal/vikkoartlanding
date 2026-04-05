@@ -61,18 +61,63 @@
     <link rel="apple-touch-icon" href="https://lessons.vikkoart.me/raw/Favico.png">
 
     <!-- ═══════════════════════════════════════════
+         CRITICAL ASSETS PRELOAD
+    ═══════════════════════════════════════════ -->
+    <link rel="preload" href="fonts/montserrat-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="raw/background-hero.webp" as="image">
+    <link rel="preload" href="raw/Vikkoart.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="raw/i.webp" as="image" fetchpriority="high">
+
+    <!-- ═══════════════════════════════════════════
          PERFORMANCE: CSS & FONTS (Highest Priority)
     ═══════════════════════════════════════════ -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <!-- ═══════════════════════════════════════════
+         CRITICAL CSS (Inline to improve FCP/LCP)
+    ═══════════════════════════════════════════ -->
+    <style>
+        :root {
+            --bg-color: #0d1a33;
+            --text-main: #f0f4f8;
+            --text-accent: #ffffff;
+            --btn-fill: #606A42;
+            --btn-border: #EBE05E;
+            --accent-glow: rgba(235, 224, 94, 0.35);
+            --font-body: 'Montserrat', sans-serif;
+            --font-cursive: 'Caveat', cursive;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            font-family: var(--font-body);
+            overflow-x: hidden;
+        }
+        .bg-texture {
+            position: fixed;
+            top: -10vh;
+            left: -10vw;
+            width: 120vw;
+            height: 120vh;
+            background-image: url("raw/background-hero.webp");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            z-index: -5;
+            pointer-events: none;
+            transform: translateZ(0);
+        }
+        .header-logo { text-align: center; margin: 44px auto 0 auto; }
+        .logo-img { max-width: 100%; height: auto; width: 1000px; display: block; margin: 0 auto; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    </style>
 
     <!-- 1. Our critical stylesheet first -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- 2. Google Fonts with display=swap (non-blocking for text rendering) -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=Montserrat:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+
 
     <!-- ═══════════════════════════════════════════
          STRUCTURED DATA — JSON-LD
@@ -525,7 +570,7 @@
             loading="lazy">
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
