@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { rootMargin: '0px 0px 200px 0px', threshold: 0 });
 
     // Stagger delay for cards in the same grid
-    document.querySelectorAll('.audience-grid, .pricing-steps, .path-items').forEach(group => {
+    document.querySelectorAll('.audience-grid, .exam-grid, .pricing-steps, .path-items').forEach(group => {
         group.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((child, i) => {
             child.style.transitionDelay = `${i * 0.07}s`;
         });
